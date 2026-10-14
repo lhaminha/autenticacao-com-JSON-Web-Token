@@ -116,6 +116,10 @@ function revalidar() {
   }
 }
 
+function paginaAreaRestrita(){
+    window.location.href = 'area.html';
+}
+
 submitBtn.addEventListener("click", (e) =>{
   e.preventDefault();
 
