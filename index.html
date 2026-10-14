@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript, DOM e Eventos</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Login</h1>
+    <p>
+      Aplicação de JavaScript, Autentificação com JSON Web Token
+    </p>
+  </header>
+
+  <main class="container">
+    <section class="form-section">
+      <h2>Formulário</h2>
+
+      <form action="">
+        <fieldset>
+          <legend>Informe seus dados:</legend>
+          <article class="form-items">
+            <section class="info">
+              <div>
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="name@example.com" title="Digite seu e-mail">
+                <small id="email-verify" class="hidden" aria-hidden></small>
+              </div>
+            </section>
+
+            <div>
+              <label for="pwd">Senha</label>
+              <input type="password" id="pwd">
+              <small id="pwd-verify" class="hidden" aria-hidden></small>
+            </div>
+            
+          <button type="submit" id="submit-btn" disabled>Enviar</button>
+
+        </fieldset>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <small>
+      © 2026 Laboratório 06 - JavaScript, autentificação com JSON Web Token. Todos os direitos reservados.
+    </small>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
