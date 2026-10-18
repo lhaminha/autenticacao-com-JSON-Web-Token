@@ -24,6 +24,13 @@ html,
 body {
   font-family: sans-serif;
   background-color: var(--clr-bg);
+  min-height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 header {
@@ -36,7 +43,7 @@ h1 {
   color: var(--clr-dark);
 }
 
-p {
+.itens-section p {
     font-size: 1.50rem;
     font-weight: 700;
     color: var(--clr-success);

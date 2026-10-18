@@ -25,6 +25,13 @@ body {
   font-family: sans-serif;
   background-color: var(--clr-bg);
   list-style-position: inside;
+  min-height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 header {
@@ -46,12 +53,8 @@ small {
   min-height: 1lh;
 }
 
-form {
-  margin-top: 16px;
-}
-
 .container {
-  width: min(100% - 32px, 960px);
+  width: min(100% - 32px, 400px);
   margin: 16px auto;
 }
 
@@ -64,6 +67,9 @@ form {
 
 legend {
   font-weight: 700;
+  display: block;
+  margin-inline: auto;
+  color: var(--clr-dark);
 }
 
 .form-items label {
@@ -143,10 +149,12 @@ button {
   border-radius: 6px;
   font-weight: 700;
   transition: 0.2s;
+  margin-inline: auto;
 }
 
 button:not(:disabled):hover {
   filter: brightness(0.9);
+  cursor: pointer;
 }
 
 button:disabled {
@@ -163,4 +171,23 @@ footer {
   border-top: 1px solid var(--clr-border);
   padding-block: 12px;
   color: var(--clr-subtle);
+}
+
+.validate {
+  background-color: var(--clr-primary-bg);
+  color: var(--clr-primary);
+  border: 1px solid var(--clr-primary);
+  border-radius: 16px;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.validate.warning {
+  background-color: var(--clr-warning-bg);
+  color: var(--clr-warning);
+  border: 1px solid var(--clr-warning);
+}
+
+.validate p {
+  min-height: 1lh;
 }

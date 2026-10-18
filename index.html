@@ -19,30 +19,29 @@
 
   <main class="container">
     <section class="form-section">
-      <h2>Formulário</h2>
-
       <form action="">
         <fieldset>
-          <legend>Informe seus dados:</legend>
+          <legend>Faça seu login</legend>
           <article class="form-items">
             <section class="info">
               <div>
                 <label for="email">E-mail</label>
                 <input type="email" id="email" placeholder="name@example.com" title="Digite seu e-mail">
-                <small id="email-verify" class="hidden" aria-hidden></small>
               </div>
             </section>
 
             <div>
               <label for="pwd">Senha</label>
               <input type="password" id="pwd">
-              <small id="pwd-verify" class="hidden" aria-hidden></small>
             </div>
 
-          <button onclick="paginaAreaRestrita()" type="submit" id="submit-btn" disabled>Enviar</button>
-
+          <button type="submit" id="submit-btn">Login</button>
         </fieldset>
       </form>
+    </section>
+
+    <section class="validate hidden" aria-hidden="true" id="validate">
+      <p id="validate__msg"></p>
     </section>
   </main>
 
@@ -52,6 +51,6 @@
     </small>
   </footer>
 
-  <script src="script.js" defer></script>
+  <script src="login.js" defer></script>
 </body>
 </html>

@@ -38,7 +38,7 @@ email.addEventListener("blur", () => {
 
 // Validação da senha
 pwd.addEventListener("focus", () => {
-    hideMsg(pwdverify);
+    hideMsg(pwdVerify);
 });
 
 pwd.addEventListener("blur", () => {
@@ -114,10 +114,6 @@ function revalidar() {
   } else{
     submitBtn.disabled = true;
   }
-}
-
-function paginaAreaRestrita(){
-    window.location.href = 'area.html';
 }
 
 submitBtn.addEventListener("click", (e) =>{
