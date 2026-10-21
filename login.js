@@ -1,6 +1,6 @@
 const pwd = document.getElementById("pwd");
 const email = document.getElementById("email");
-const submitBtn = document.getElementById("submit-btn");
+const loginForm = document.getElementById("login-form");
 const validate = document.getElementById("validate");
 const validateMsg = document.getElementById("validate");
 
@@ -9,7 +9,7 @@ const fakeToken =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIzLCJuYW1lIjoiRW5nLiBDb21wdXRhXHUwMGU3XHUwMGUzbyIsInJvbGUiOiJKV1QiLCJpYXQiOjE3NTk5ODEzMTcsImV4cCI6MTc1OTk4NDkxN30.b1KfcSFInRwYnvRA0Ae5jYuL59KZmCsufPgISNGq0X0";
 
 // identifica um clique no botão de login
-submitBtn.addEventListener("click", (e) => {
+loginForm.addEventListener("submit", (e) => {
   // previne o comportamento padrão
   e.preventDefault();
   const emailVal = email.value;
@@ -27,6 +27,7 @@ submitBtn.addEventListener("click", (e) => {
     validate.classList.remove("hidden");
     validate.classList.add("warning");
     validate.ariaHidden = "false";
+    validate.ariaLive = "assertive";
     validateMsg.textContent = warningTxt;
   }
 });

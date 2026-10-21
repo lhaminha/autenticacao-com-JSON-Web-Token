@@ -4,6 +4,14 @@ Nome: Heloisa Teixeira Frois Pereira — RA: 26006077
 Nome: Letícia Leal Gervenutti — RA: 26010371
 Nome: Lucas Nogami Tung — RA: 26020394
 
+Descrição das funcionalidades
+
+Este projeto tem por objetivo simular o fluxo de login para acesso de uma área restrita. A simulação foi feita utilizando armazenamento local e validação de um JWT (JSON Web Token). O projeto não contempla a verificação de logins válidos, apenas sua existência.
+
+Instruções para executar
+
+Para executar o projeto, é necessário abrí-lo por meio de um servidor http e iniciá-lo em index.html.
+
 Questão 1: Quais são as três partes de um JWT e qual é a função de cada uma?
 
 O JWT é divido em:
@@ -30,3 +38,21 @@ Verificar se um token existe no localStorage consiste em consultar se há um val
 Questão 6: Qual é a finalidade do campo exp e o que acontece quando um JWT ultrapassa seu prazo de validade?
 
 O campo exp indica o instante a partir do qual o JWT não deve mais ser aceito, expresso em segundos desde 1º de janeiro de 1970 (Unix time). Quando o token atinge ou ultrapassa esse instante, o servidor deve rejeitá-lo. Assim, a expiração limita o período de utilização do token e reduz a janela de oportunidade para ataques envolvendo tokens comprometidos.
+
+Descrição dos testes realizados
+
+1. Inserir o login e a senha
+2. Inserir apenas o login
+3. Inserir apenas a senha
+4. Não inserir nem o login, nem a senha
+5. Acessar area.html pela URL
+6. Modificar o token manualmente
+7. Logout
+8. Todos os testes acima após o logout
+9. Verificação da presença do token no localStorage por meio de DevTools
+10. Verificação da assinatura e da decodificação por meio do site jwt.io
+11. Verificação de erros no console
+
+Limitações de segurança
+
+O presente projeto não contempla a verificação da autenticidade do token armazenado, apenas sua existência e sua integridade. Além disso, não há verificações quanto à validade do token, de forma que o utilizado como exemplo contém uma validade expirada. Essas limitações representam riscos graves em produção, uma vez que torna a aplicação suscetível a dissimulações de identidade. No entanto, essas verificações são normalmente realizadas pelo backend do servidor, aspecto fora do escopo do projeto.

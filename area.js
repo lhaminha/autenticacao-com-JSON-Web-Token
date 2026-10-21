@@ -14,6 +14,29 @@ const base64Regex = /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3
 
 logoutBtn.addEventListener("click", voltaLogin);
 
+if (token) {
+  try {
+    // pega o json com o payload
+    const dados = lerPayload(token);
+    // pega o nome do usuário armazenado no payload
+    const nome = dados.name;
+
+    // exibe a mensagem na tela
+    loginMessage.textContent = `Bem-vindo, ${nome}`;
+  } catch (erro) {
+    // token inválido
+    loginMessage.textContent = "Acesso negado. Token inválido.";
+    loginMessage.style.color = "var(--clr-warning)";
+    logoutBtn.textContent = "Realizar Login";
+  }
+} else {
+  // token não encontrado
+  loginMessage.textContent = "Acesso negado. Token não encontrado.";
+  loginMessage.style.color = "var(--clr-warning)";
+  logoutBtn.textContent = "Realizar Login";
+}
+
+
 function lerPayload(token) {
   // divide a string da entrada, separando-a pelo caractere "."
   const partes = token.split(".");
@@ -48,26 +71,6 @@ function lerPayload(token) {
 
   // Converte o texto JSON em um valor JavaScript e o retorna.
   return JSON.parse(texto);
-}
-
-if (token) {
-  try {
-    // pega o json com o payload
-    const dados = lerPayload(token);
-    // pega o nome do usuário armazenado no payload
-    const nome = dados.name;
-
-    // exibe a mensagem na tela
-    loginMessage.textContent = `Bem-vindo, ${nome}`;
-  } catch (erro) {
-    // se ocorrer um erro, retorna para a tela de login
-    localStorage.removeItem("token");
-    window.location.href = "index.html";
-  }
-} else {
-  loginMessage.textContent = "Acesso negado. Token não encontrado.";
-  loginMessage.style.color = "var(--clr-warning)";
-  logoutBtn.textContent = "Realizar Login";
 }
 
 // volta para a tela inicial e remove o token do localStorage
