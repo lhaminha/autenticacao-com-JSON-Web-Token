@@ -97,7 +97,7 @@ input[aria-invalid="true"] {
   background-color: var(--clr-warning-bg) !important;
 }
 
-[aria-invalid="true"] ~ small {
+[aria-invalid="true"]~small {
   color: var(--clr-warning);
 }
 
@@ -116,7 +116,7 @@ input[aria-invalid="false"]:focus {
   outline: 3px solid rgba(25, 135, 84, 0.4) !important;
 }
 
-[aria-invalid="false"] ~ small {
+[aria-invalid="false"]~small {
   color: var(--clr-success);
 }
 
@@ -190,4 +190,11 @@ footer {
 
 .validate p {
   min-height: 1lh;
+}
+
+.itens-section p {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--clr-success);
 }
